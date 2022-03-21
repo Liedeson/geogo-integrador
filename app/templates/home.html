@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'components/nav.html' %}
+
+<main class="container">
+  <main class="container py-3">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <h1>Desafios</h1>
+        <div class="py-3 d-flex flex-column gap-3">
+          {% if desafios %}
+            <div class="d-flex justify-content-end">
+              <a href="{{ url_for('novo_desafio') }}" class="btn btn-primary">
+                Criar novo desafio
+              </a>
+            </div>
+            {% for desafio in desafios %}
+              <div class="border rounded p-3 d-flex justify-content-between">
+                <a href="{{ url_for('desafio', id=desafio.id) }}">
+                  {{ desafio.title }}
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                  <a href="{{ url_for('desafio_completo', id=desafio.id) }}" title="Marcar como concluído">
+                    deletar
+                  </a>
+                  <a href="{{ url_for('editar_desafio', id=desafio.id) }}" title="Editar desafio">
+                    <img src="{{ url_for('static', filename='img/edit.svg') }}" alt="">
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+          <div class="d-flex flex-column align-items-center border rounded py-3">
+            <p>adicione um desafio!</p>
+            <div>
+              <a href="{{ url_for('novo_desafio') }}" class="link link-primary">
+                Clique aqui para criar desafio
+              </a>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </main>
+</main>
+
+{% endblock %}

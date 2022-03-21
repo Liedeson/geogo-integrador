@@ -1,0 +1,24 @@
+{% extends  'base.html' %}
+
+{% block content %}
+{% include 'components/nav.html' %}
+<main class="container">
+    <h2>Sobre o projeto</h2>
+
+<br>
+        <h1>O que sao jogos educativo?</h1>
+        <h4>Os jogos e aplicações têm sido um conceito importante <br> no avanço da tecnologia há mais de 40 anos. Eles <br> não só se  uma das fontes de entretenimento mais <br> populares, mas também, aliados à educação, colaboram<br> e reforçam o aprendizado de forma lúdica.</h4>
+        <img src="{{ url_for('static', filename='img/imagem.svg') }}" alt="">
+
+        <br>
+
+        <h1>Ideia do projeto</h1>
+        <h4> O nosso projeto nomeado "GeoGo!", é basicamente um <br> jogo educativo, voltado para a disciplina de Geografia. <br>
+        com a ideia de propor um artefato que possibilite ao 
+        <br> aluno/professor a dinamização do ensino e <br> aprendizagem de Geografia, facilitando as atividades e as aulas.
+        <br>
+
+        <h4> Densenvolvedores: Hudson Mendes, Liedeson Moraes, Maria Clara</h4>
+        <h4> Orientadores: Vicente Lima, Marjorie Ramos  </h4>
+  </main>
+{% endblock %}
